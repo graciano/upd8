@@ -2,29 +2,33 @@
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		var upd8 = function(){
-		$.ajax({
-			url: "http://www.mspaintadventures.com/",
-			dataType: "jsonp",
-			data:{},
-			beforeSend: function(){ console.log("trying...");
-				$("#h1").text("trying.");
-				$("#h1").fadeIn(400, function(){
-					$(this).text("trying..");
-				});
-			},
-			complete: function(xhr, status){
-				$("#h1").fadeOut();
-				console.log("status: "+xhr.status);
-				if(xhr.status==200) alert("UPD8 IT'S ALIVE!!");
-				else{
-					console.log("still not working :(");
-					$("#h1").text("still not working :(");
-					$("#h1").fadeIn();
-				}
-			},
-		});
+			$.ajax({
+				url: "http://www.mspaintadventures.com/",
+				dataType: "jsonp",
+				data:{},
+				beforeSend: function(){ console.log("trying...");
+					$("#h1").text("trying.");
+					$("#h1").fadeIn(400, function(){
+						$(this).text("trying..");
+					});
+				},
+				complete: function(xhr, status){
+					$("#h1").fadeOut();
+					console.log("status: "+xhr.status);
+					if(xhr.status==200) alert("UPD8 IT'S ALIVE!!");
+					else{
+						console.log("still not working :(");
+						$("#h1").text("still not working :(");
+						$("#h1").fadeIn();
+					}
+				},
+			});
+		};
+		var reload = funtion(){
+			window.location.reload();
 		};
 		setInterval(upd8, 1000);
+		setInterval(reload, 40*1000);
 	</script>
 	<body>
 		<h1>upd8 homestuck</h1>
