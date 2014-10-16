@@ -4,6 +4,8 @@
 		var upd8 = function(){
 		$.ajax({
 			url: "http://www.mspaintadventures.com/",
+			dataType: "jsonp",
+			data:{},
 			beforeSend: function(){ console.log("trying...");
 				$("#h1").text("trying.");
 				$("#h1").fadeIn(400, function(){
