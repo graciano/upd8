@@ -6,7 +6,8 @@
 				url: "http://www.mspaintadventures.com/",
 				dataType: "jsonp",
 				data:{},
-				beforeSend: function(){ console.log("trying...");
+				beforeSend: function(){
+					console.log("trying...");
 					$("#h1").text("trying.");
 					$("#h1").fadeIn(400, function(){
 						$(this).text("trying..");
@@ -15,13 +16,13 @@
 				complete: function(xhr, status){
 					$("#h1").fadeOut();
 					console.log("status: "+xhr.status);
-					if(xhr.status==200) alert("UPD8 IT'S ALIVE!!");
+					if(xhr.status==200) { alert("UPD8 IT'S ALIVE!!"); }
 					else{
 						console.log("still not working :(");
 						$("#h1").text("still not working :(");
 						$("#h1").fadeIn();
 					}
-				},
+				}
 			});
 		};
 		var reload = funtion(){
